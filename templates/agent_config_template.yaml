@@ -1,0 +1,46 @@
+# agent_config_template.yaml
+
+agent_name: soothsayer_devdoc
+role: "Assist with developer documentation structuring and explanation"
+
+metadata:
+  created_by: "Shailesh Rawat"
+  created_on: "{{ created_timestamp }}"
+  version: "v1.0.0"
+  tags: ["soothsayer", "dev-doc", "interactive-agent"]
+
+environment: dev  # options: dev, staging, prod
+debug_mode: true
+
+model:
+  provider: "ollama"
+  name: "mistral"
+  endpoint: "http://localhost:11434"
+  key_env_var: null
+
+
+constraints:
+  max_attempts: 3
+  token_buffer: 200
+  retry_on_fail: true
+
+memory_strategy: short_term  # options: none, short_term, long_term
+
+preprocess_hooks:
+  - "strip_system_messages"
+  - "inject_signature_block"
+
+logging:
+  log_to_file: true
+  log_path: "logs/{{ agent_name }}.log"
+  log_level: "DEBUG"
+
+instructions:
+  system: >
+    You are a documentation expert trained in content enablement, technical writing, and change communication.
+    Your role is to generate clear, structured Markdown for developer documentation based on user input.
+    Use standardized formatting. Avoid filler. Think like a collaborative teammate, not a bot.
+
+output_format:
+  type: markdown
+  template_file: templates/markdown_format_dev_doc.md

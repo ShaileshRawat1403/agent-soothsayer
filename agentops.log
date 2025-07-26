@@ -1,0 +1,13 @@
+2025-07-27 00:11:24,648 - INFO - AgentOps: 'crewai' is the first-targeted agentic library. Will uninstrument providers if any are/become active.
+2025-07-27 00:11:24,656 - INFO - AgentOps: Successfully instrumented 'CrewaiInstrumentor' for package 'agentops.instrumentation.agentic.crewai'.
+2025-07-27 00:11:24,656 - INFO - Session Replay for default trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:11:47,428 - WARNING - end_session() is deprecated and will be removed in v4 in the future. Use agentops.end_trace() instead.
+2025-07-27 00:11:47,959 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:14:04,748 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:16:38,399 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:17:37,869 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:19:07,395 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:21:25,288 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:23:51,685 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:25:46,943 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
+2025-07-27 00:28:07,560 - INFO - Session Replay for default.session trace: https://app.agentops.ai/sessions?trace_id=97f96d59ad54e8ef959f452671e920f3
