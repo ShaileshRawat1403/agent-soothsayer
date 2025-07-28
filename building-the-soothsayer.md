@@ -1,3 +1,4 @@
+```markdown
 ---
 title: Building Soothsayer
 description: A comprehensive, thinking-first guide to building your own CrewAI-powered local AI agent for meaningful content and communication.
@@ -88,119 +89,128 @@ soothsayer-crewai/
 │       └── ci.yml
 ├── BUILDING_SOOTHSAYER.md
 └── TECH_STACK.md
-
+```
 
 ---
 
-🧰 Step-by-Step Setup
+## 🧰 Step-by-Step Setup
 
-1. Clone the Repo
+### 1. Clone the Repo
 
+```bash
 git clone https://github.com/your-username/soothsayer-crewai
 cd soothsayer-crewai
+```
 
-2. Create a Virtual Environment
+### 2. Create a Virtual Environment
 
+```bash
 python3 -m venv .venv
 source .venv/bin/activate  # macOS/Linux
+```
 
-3. Install Requirements
+### 3. Install Requirements
 
+```bash
 pip install -r requirements.txt
+```
 
-4. Pull the Ollama Model
+### 4. Pull the Ollama Model
 
+```bash
 ollama pull mistral
-
+```
 
 ---
 
-📝 Sample Input Markdown File
+## 📝 Sample Input Markdown File
 
-input_docs/add_numbers.md
+`input_docs/add_numbers.md`
 
+```markdown
 ---
 Title: Add Numbers Utility
 Overview: This function takes two integers and returns their sum.
 Why It Matters: Helps simplify repeated addition tasks in our service layer.
 ---
-
+```
 
 ---
 
-🧠 The System Prompt (Generated)
+## 🧠 The System Prompt (Generated)
 
-In soothsayer_agent.py, your Markdown is parsed and injected into the agent's system prompt:
+In `soothsayer_agent.py`, your Markdown is parsed and injected into the agent's system prompt:
 
+```
 You are Soothsayer, an AI strategist built to translate complexity into clarity...
 
 📘 Title: Add Numbers Utility  
 📎 Overview: This function takes two integers and returns their sum.  
 📌 Why It Matters: Helps simplify repeated addition tasks...
-
-This becomes the grounding context for reasoning.
-
+```
 
 ---
 
-🚀 Launch the Gradio App
+## 🚀 Launch the Gradio App
 
+```bash
 cd gradio_ui
 python app.py
+```
 
-You'll receive a localhost URL in the terminal. Open it in your browser to interact with Soothsayer.
-
-
----
-
-🧨 Common Issues and Fixes
-
-🔸 Missing Prompt Error
-
-Error: Please provide Prompt Values for: task, lazy_prompt
-Fix: Removed lazy prompt arg and passed full prompt manually to the task.
-
+Your browser will open with a clean Gradio interface where you can paste a messy thought and get structured output.
 
 ---
 
-🔸 Agent Not Triggering
+## 🧨 Common Issues and Fixes
 
-Cause: No Crew instance defined.
-Fix:
+### 🔸 Missing Prompt Error
 
+**Error**: `Please provide Prompt Values for: task, lazy_prompt`  
+**Fix**: Removed lazy prompt arg and passed full prompt manually to the task.
+
+---
+
+### 🔸 Agent Not Triggering
+
+**Cause**: No Crew instance defined.  
+**Fix**:
+
+```python
 crew = Crew(
   agents=[soothsayer],
   tasks=[task],
   verbose=True
 )
-
-
----
-
-🔸 Markdown Crashing on NoneType
-
-Cause: Missing YAML fields like Overview.
-Fix: Use .get("Overview", "") pattern in parser.
-
+```
 
 ---
 
-🧪 Example Input → Output
+### 🔸 Markdown Crashing on NoneType
 
-User Prompt:
+**Cause**: Missing YAML fields like `Overview`.  
+**Fix**: Use `.get("Overview", "")` pattern in parser.
+
+---
+
+## 🧪 Example Input → Output
+
+**User Prompt**:  
 “I need to document a function that adds numbers but explain why it’s useful for backend design.”
 
-Output from Soothsayer:
+**Output from Soothsayer**:
 
+```markdown
 📘 Title: Add Numbers Utility  
 📎 Overview: This function takes two integers and returns their sum.  
 📌 Why It Matters: This utility supports modular arithmetic operations for API-layer reusability.
-
+```
 
 ---
 
-📐 System Architecture
+## 📐 System Architecture
 
+```plaintext
 Markdown File (.md)
      ↓
 parse_md_function.py
@@ -212,78 +222,62 @@ CrewAI Task
 Soothsayer Agent (Ollama Mistral)
      ↓
 Gradio UI → Exported Output (Markdown)
-
+```
 
 ---
 
-🔄 Modular Agent Flow (Mermaid)
+## 🔄 Modular Agent Flow (Mermaid)
 
+```mermaid
 graph TD
     A[Input Markdown File] --> B[Parser Agent]
     B --> C[Clarifier Agent]
     C --> D[Scribe Agent]
     D --> E[Structured Markdown Output]
     E --> F[Gradio Interface]
-
+```
 
 ---
 
-✏️ Customizing the Agent
+## ✏️ Customizing the Agent
 
-Edit the system prompt logic in soothsayer_agent.py to:
+Edit the system prompt logic in `soothsayer_agent.py` to:
 
-Add poetic tone
-
-Match department-specific voice
-
-Enforce tense, language, or jargon boundaries
-
+- Add poetic tone  
+- Match department-specific voice  
+- Enforce tense, language, or jargon boundaries  
 
 Use your Sans Serif Sentiments identity to guide style choices.
 
-
 ---
 
-🧠 What You’ve Built
+## 🧠 What You’ve Built
 
-You didn’t just write a chatbot.
+You didn’t just write a chatbot.  
 You built an assistant that:
-
-Thinks like a writer
-
-Reflects like a strategist
-
-Structures like a documentarian
-
+- Thinks like a writer  
+- Reflects like a strategist  
+- Structures like a documentarian  
 
 And it’s fully yours — local, extensible, and private.
 
+---
+
+## 🔗 What's Next?
+
+- `TECH_STACK.md` — Deployment, Docker, CI/CD  
+- Expand to multi-agent setup  
+- Add memory or feedback loop  
+- Export HTML/PDF from output  
+- Streamlined Slack → Doc workflows
 
 ---
 
-🔗 What's Next?
+## ✍ Author
 
-TECH_STACK.md — Deployment, Docker, CI/CD
-
-Expand to multi-agent setup
-
-Add memory or feedback loop
-
-Export HTML/PDF from output
-
-Streamlined Slack → Doc workflows
-
-
-
----
-
-✍ Author
-
-Shailesh Rawat (PoeticMayhem)
+**Shailesh Rawat** (PoeticMayhem)  
 Bridging the Thinking Gap — one structured thought at a time.
 
-
 ---
-
-
+```
 
