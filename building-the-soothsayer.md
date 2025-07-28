@@ -106,6 +106,7 @@ soothsayer-crewai/
 │       └── ci.yml                    # GitHub Actions for linting
 ├── BUILDING_SOOTHSAYER.md            # This file
 └── TECH_STACK.md                     # Architecture, CI/CD, deployment
+```
 
 ---
 
