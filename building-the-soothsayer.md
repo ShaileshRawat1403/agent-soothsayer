@@ -107,7 +107,6 @@ soothsayer-crewai/
 ├── BUILDING_SOOTHSAYER.md            # This file
 └── TECH_STACK.md                     # Architecture, CI/CD, deployment
 
-
 ---
 
 🧰 Step-by-Step Setup
