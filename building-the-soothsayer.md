@@ -1,4 +1,3 @@
-```markdown
 ---
 title: Building Soothsayer
 description: A comprehensive, thinking-first guide to building your own CrewAI-powered local AI agent for meaningful content and communication.
@@ -279,5 +278,4 @@ And it’s fully yours — local, extensible, and private.
 Bridging the Thinking Gap — one structured thought at a time.
 
 ---
-```
 
